@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>core_analysis</class>
+ <widget class="QWidget" name="core_analysis">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>403</width>
+    <height>227</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Core File Analysis</string>
+  </property>
+  <widget class="QTabWidget" name="tabs">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="login">
+    <attribute name="title">
+     <string>Login</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>hostname</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="hostname">
+        <property name="toolTip">
+         <string>name of remote unix host to connet to</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>password</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLineEdit" name="password">
+        <property name="toolTip">
+         <string>remote unix password</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>command</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" colspan="2">
+       <widget class="QLineEdit" name="command">
+        <property name="toolTip">
+         <string>complete path to debugger</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>binary</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2" colspan="3">
+       <widget class="QLineEdit" name="binary">
+        <property name="toolTip">
+         <string>path to remote binary on host</string>
+        </property>
+        <property name="whatsThis">
+         <string>asdadasd</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>username</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLineEdit" name="username">
+        <property name="toolTip">
+         <string>username of remote unix host</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>startup</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2" colspan="2">
+       <widget class="QLineEdit" name="startup">
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QCheckBox" name="save_password">
+        <property name="toolTip">
+         <string>save password in IDB</string>
+        </property>
+        <property name="text">
+         <string>save</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="4">
+       <widget class="QCheckBox" name="checkBox">
+        <property name="text">
+         <string>debug</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QPushButton" name="connect">
+        <property name="toolTip">
+         <string>connect to/disconnect from remote host</string>
+        </property>
+        <property name="text">
+         <string>connect</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2" colspan="3">
+       <widget class="QLineEdit" name="core">
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>core path</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="debug_control">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="title">
+     <string>Debugger</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>210</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="1" colspan="2">
+       <widget class="QPushButton" name="stack">
+        <property name="toolTip">
+         <string>Show stack trace</string>
+        </property>
+        <property name="text">
+         <string>stack trace</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QPushButton" name="sharedlibs">
+        <property name="toolTip">
+         <string>Display all shared libraries.</string>
+        </property>
+        <property name="text">
+         <string>shared libs</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QSpinBox" name="framenr">
+        <property name="toolTip">
+         <string>increase or decrease current frame</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QPushButton" name="registers">
+        <property name="toolTip">
+         <string>show registers of current frame</string>
+        </property>
+        <property name="text">
+         <string>registers</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="curr_frame">
+        <property name="toolTip">
+         <string>show current frame</string>
+        </property>
+        <property name="text">
+         <string>frame</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <action name="actionConnect">
+   <property name="text">
+    <string>connect</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tabs</tabstop>
+  <tabstop>hostname</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>command</tabstop>
+  <tabstop>binary</tabstop>
+  <tabstop>sharedlibs</tabstop>
+  <tabstop>stack</tabstop>
+  <tabstop>framenr</tabstop>
+  <tabstop>registers</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
