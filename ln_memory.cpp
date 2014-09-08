@@ -636,7 +636,7 @@ uint32 idaapi m_group_show_used_m_entry_cb(void *obj, uint32 n)
 			my_dat.type = chooser_m_entry_used;
 			my_dat.item_cb = chooser_m_entry_used_item_cb;
 			my_dat.entry = mg->my_entry;
-			strcpy(my_dat.name, title);
+			qstrcpy(my_dat.name, title);
 			m_groups->my_choosers[get_chooser_obj(title)] = my_dat;
 		}
 		return true;
@@ -670,7 +670,7 @@ uint32 idaapi m_group_show_free_m_entry_cb(void *obj, uint32 n)
 			my_dat.type = chooser_m_entry_free;
 			my_dat.item_cb=	chooser_m_entry_free_item_cb;
 			my_dat.entry = 	mg->my_entry;
-			strcpy(my_dat.name, title);
+			qstrcpy(my_dat.name, title);
 			m_groups->my_choosers[get_chooser_obj(title)] = my_dat;
 		} 
 		return true;
@@ -806,7 +806,7 @@ error_t analyze_m_groups()
 	my_dat.type = chooser_m_group;
 	my_dat.item_cb = chooser_m_group_item_cb;
 	my_dat.entry = -1;
-	strcpy(my_dat.name, m_group_title);
+	qstrcpy(my_dat.name, m_group_title);
 	m_groups->my_choosers[get_chooser_obj(m_group_title)] = my_dat;
 	
 	if (m_group_ch==0) {
