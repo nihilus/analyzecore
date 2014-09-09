@@ -1,6 +1,6 @@
 
 
 QT_NAMESPACE = QT
-DESTDIR = ../../bin
+DESTDIR = .
 DEFINES = __IDP__ __QT__ NO_OBSOLETE_FUNCS
 QMAKE_MAKEFILE = qmakefile
