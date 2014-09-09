@@ -32,6 +32,8 @@
 #include "pro.h"
 #include "kernwin.hpp"
 
+#undef strcpy
+
 enum TypeSocket {BlockingSocket, NonBlockingSocket};
 
 class Socket {
@@ -114,9 +116,9 @@ public:
 	SocketClientT(const std::string &host, int port) :
 	SocketClient(host, port), running(false), my_t(0), my_cli(0) 
 	{
-		qstrcpy(sname, host.c_str());
-		qstrcpy(lname, host.c_str());
-		qstrcpy(hint, host.c_str());
+		strcpy(sname, host.c_str());
+		strcpy(lname, host.c_str());
+		strcpy(hint, host.c_str());
 		my_cli = new cli_t;
 		my_cli->size = sizeof(cli_t);
 		my_cli->sname = sname;

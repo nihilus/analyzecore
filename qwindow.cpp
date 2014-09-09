@@ -4,7 +4,7 @@
  *
  */
 
-
+#include <WinSock2.h>
 #include <QtGui>
 
 
@@ -30,13 +30,13 @@
 void CoreCallbacks::connect_rexec()
 {
 	if (rexec_curr==0) {
-		std::string hostname(core_ui->hostname->text().toAscii().data());
-		std::string username(core_ui->username->text().toAscii().data());
-		std::string password(core_ui->password->text().toAscii().data());
-		std::string command(core_ui->command->text().toAscii().data());
-		std::string startup(core_ui->startup->text().toAscii().data());
-		std::string binary(core_ui->binary->text().toAscii().data());
-		std::string core(core_ui->core->text().toAscii().data());
+		std::string hostname(core_ui->hostname->text().toLatin1().data());
+		std::string username(core_ui->username->text().toLatin1().data());
+		std::string password(core_ui->password->text().toLatin1().data());
+		std::string command(core_ui->command->text().toLatin1().data());
+		std::string startup(core_ui->startup->text().toLatin1().data());
+		std::string binary(core_ui->binary->text().toLatin1().data());
+		std::string core(core_ui->core->text().toLatin1().data());
 		
 		char idb_path_c[QMAXPATH];
 		
@@ -113,7 +113,7 @@ void CoreCallbacks::dbg_shared_libs()
 
 void CoreCallbacks::dbg_frame_select()
 {
-	std::string framenr(core_ui->framenr->cleanText().toAscii().data());
+	std::string framenr(core_ui->framenr->cleanText().toLatin1().data());
 	send_dbg_cmd(DBG_CMD_FRAME_CURR, framenr);
 }
 
@@ -275,16 +275,16 @@ static int idaapi ui_callback(void *user_data, int notification_code, va_list va
 		if (core_ui) {
 			login_info info; // find my stored login info in the idb
 			
-			std::string hostname(core_ui->hostname->text().toAscii().data());
-			std::string username(core_ui->username->text().toAscii().data());
+			std::string hostname(core_ui->hostname->text().toLatin1().data());
+			std::string username(core_ui->username->text().toLatin1().data());
 			std::string password("");
-			std::string command(core_ui->command->text().toAscii().data());
-			std::string startup(core_ui->startup->text().toAscii().data());
-			std::string binary(core_ui->binary->text().toAscii().data());
-			std::string core(core_ui->core->text().toAscii().data());
+			std::string command(core_ui->command->text().toLatin1().data());
+			std::string startup(core_ui->startup->text().toLatin1().data());
+			std::string binary(core_ui->binary->text().toLatin1().data());
+			std::string core(core_ui->core->text().toLatin1().data());
 
 			if (core_ui->save_password->isChecked()) {
-				password = core_ui->password->text().toAscii().data();
+				password = core_ui->password->text().toLatin1().data();
 			}
 			
 			info.set_hostname(hostname);
@@ -331,7 +331,7 @@ void idaapi qt_run(void)
 	if ( hwnd != NULL )
 	{
 		hook_to_notification_point(HT_UI, ui_callback, form);
-		open_tform(form, FORM_MDI|FORM_TAB|FORM_MENU|FORM_RESTORE|FORM_QWIDGET);
+		open_tform(form, FORM_TAB|FORM_MENU|FORM_RESTORE|FORM_QWIDGET);
 	} else {
 		close_tform(form, FORM_SAVE);
 	}

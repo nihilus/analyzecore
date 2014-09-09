@@ -29,7 +29,7 @@ bool make_struct_name(ea_t loc, tid_t loc_t, const char *struct_name, const char
 	if (len!=0) {
 		char *name_type = new char[len+1];
 
-		get_ascii_contents(struct_name_loc, len, ASCSTR_C, name_type, len);
+		get_ascii_contents2(struct_name_loc, len, ASCSTR_C, name_type, len);
 		pr_len = qsnprintf(buf, 1023, "%s_%s_%s", prefix, name_type, member_name);
 
 		delete[] name_type;
@@ -111,7 +111,7 @@ bool make_name(ea_t loc, tid_t tid, const char *str_name, const char *prefix, bo
 		make_ascii_string(name_ea, -1, ASCSTR_C);
 		size_t len = get_max_ascii_length(name_ea, ASCSTR_C);
 		name_type = new char[len+1];
-		get_ascii_contents(name_ea, len, ASCSTR_C, name_type, len);
+		get_ascii_contents2(name_ea, len, ASCSTR_C, name_type, len);
 // remove
 		for(size_t i=0;i<len;i++) {
 			if ( 
@@ -130,7 +130,7 @@ bool make_name(ea_t loc, tid_t tid, const char *str_name, const char *prefix, bo
 			size_t len = get_max_ascii_length(loc, ASCSTR_C);
 			if(len>0) {
 				name_type = new char[len+1];
-				get_ascii_contents(loc, len, ASCSTR_C, name_type, len);
+				get_ascii_contents2(loc, len, ASCSTR_C, name_type, len);
 			} else {
 				name_type = 0;
 			}
@@ -211,7 +211,7 @@ std::string get_string_from_loc(ea_t loc)
 		name_type = "";
 	} else {
 		char *name = new char[len+1];
-		get_ascii_contents(loc, len, ASCSTR_C, name, len);
+		get_ascii_contents2(loc, len, ASCSTR_C, name, len);
 		name_type = name;
 		delete[] name;
 	}
