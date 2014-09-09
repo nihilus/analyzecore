@@ -159,7 +159,6 @@
     <ClInclude Include="qwindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AnalyzeCore.pro" />
     <None Include="unix_core.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
