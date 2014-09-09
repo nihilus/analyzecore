@@ -40,11 +40,11 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     </OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     </OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.plw</TargetExt>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
@@ -75,7 +75,7 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>Qt5Gui.lib;Qt5Core.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5WebKitd.lib;Qt5Gui.lib;Qt5Guid.lib;Qt5Core.lib;Qt5Cored.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -110,7 +110,7 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>QtGui4.lib;QtCore4.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5WebKitd.lib;Qt5Gui.lib;Qt5Guid.lib;Qt5Core.lib;Qt5Cored.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
