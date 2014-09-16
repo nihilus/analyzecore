@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'myactions.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.1.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'myactions.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.1.0. It"
+#error "This file was generated using the moc from 5.3.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,12 +20,12 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CoreCallbacks_t {
     QByteArrayData data[8];
-    char stringdata[102];
+    char stringdata[101];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_CoreCallbacks_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_CoreCallbacks_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_CoreCallbacks_t qt_meta_stringdata_CoreCallbacks = {
     {
@@ -40,7 +40,7 @@ QT_MOC_LITERAL(7, 86, 14)
     },
     "CoreCallbacks\0connect_rexec\0\0dbg_stack\0"
     "dbg_registers\0dbg_shared_libs\0"
-    "dbg_frame_select\0dbg_curr_frame\0"
+    "dbg_frame_select\0dbg_curr_frame"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,12 +58,12 @@ static const uint qt_meta_data_CoreCallbacks[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x08,
-       3,    0,   45,    2, 0x08,
-       4,    0,   46,    2, 0x08,
-       5,    0,   47,    2, 0x08,
-       6,    0,   48,    2, 0x08,
-       7,    0,   49,    2, 0x08,
+       1,    0,   44,    2, 0x08 /* Private */,
+       3,    0,   45,    2, 0x08 /* Private */,
+       4,    0,   46,    2, 0x08 /* Private */,
+       5,    0,   47,    2, 0x08 /* Private */,
+       6,    0,   48,    2, 0x08 /* Private */,
+       7,    0,   49,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,

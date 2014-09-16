@@ -141,7 +141,7 @@
   <ImportGroup Label="ExtensionTargets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties RccDir=".\GeneratedFiles" QtVersion_x0020_Win32="4.7.2" UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles" Qt5Version_x0020_Win32="msvc2010" />
+      <UserProperties RccDir=".\GeneratedFiles" QtVersion_x0020_Win32="4.7.2" UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles" Qt5Version_x0020_Win32="msvc2010_opengl" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
