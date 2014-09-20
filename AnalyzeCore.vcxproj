@@ -15,7 +15,6 @@
     <RootNamespace>BaanVMCore</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <ProjectName>CoreAnalysis</ProjectName>
-    <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,25 +40,21 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     </OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     </OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.plw</TargetExt>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
     <CustomBuildBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BuildCompile</CustomBuildBeforeTargets>
     <CustomBuildBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BuildCompile</CustomBuildBeforeTargets>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(QTDIR)\include\QtANGLE;$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include;.\;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IDASDK)\include;$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include;.\;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QT_DLL;QT_CORE_LIB;NO_OBSOLETE_FUNCS;QT_XML_LIB;QT_GUI_LIB;QT_NAMESPACE=QT;QT_THREAD_SUPPORT;__NT__;__IDP__;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS=1;QT_LARGEFILE_SUPPORT</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -70,15 +65,12 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
       <DisableSpecificWarnings>4800;4018;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-      <AdditionalOptions>/DNOMINMAX %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>qtmaind.lib;Qt5WebKitd.lib;Qt5Gui.lib;Qt5Guid.lib;Qt5Core.lib;Qt5Cored.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>QtGui4.lib;QtCore4.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(IDASDK)\lib\x86_win_vc_32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -88,15 +80,15 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>(QTDIR)bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
+      <Command>$(QTDIR)/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>%QTDIR%/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
+      <Command>$(QTDIR)/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(QTDIR)\include\QtANGLE;$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include;.\;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IDASDK)\include;$(QTDIR)\include\qtmain;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include;.\;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QT_DLL;QT_CORE_LIB;NO_OBSOLETE_FUNCS;QT_XML_LIB;QT_GUI_LIB;QT_NAMESPACE=QT;QT_THREAD_SUPPORT;__NT__;__IDP__;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS=1;QT_LARGEFILE_SUPPORT</PreprocessorDefinitions>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -105,15 +97,12 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-      <AdditionalOptions>/DNOMINMAX %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>qtmaind.lib;Qt5WebKitd.lib;Qt5Gui.lib;Qt5Guid.lib;Qt5Core.lib;Qt5Cored.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>QtGui4.lib;QtCore4.lib;ida.lib;%(AdditionalDependencies);Ws2_32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(IDASDK)\lib\x86_win_vc_32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -121,53 +110,26 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <CustomBuildStep>
-      <Command>(QTDIR)bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
+      <Command>$(QTDIR)/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>%QTDIR%/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
+      <Command>$(QTDIR)/bin/moc -I. myactions.h &gt;moc_myactions.cpp</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="analyzecore.cpp" />
-    <ClCompile Include="callstack.cpp" />
     <ClCompile Include="cli_telnet.cpp" />
     <ClCompile Include="helpers.cpp" />
-    <ClCompile Include="includes.cpp" />
-    <ClCompile Include="ln_memory.cpp" />
-    <ClCompile Include="loadshlib.cpp" />
     <ClCompile Include="moc_myactions.cpp" />
     <ClCompile Include="qwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="analyzecore.hpp" />
-    <ClInclude Include="callstack.hpp" />
     <ClInclude Include="cli_telnet.hpp" />
-    <ClInclude Include="GeneratedFiles\ui_unix_core.h" />
     <ClInclude Include="helpers.hpp" />
-    <ClInclude Include="includes.hpp" />
-    <ClInclude Include="ln_memory.hpp" />
-    <ClInclude Include="loadshlib.hpp" />
-    <CustomBuild Include="myactions.h">
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing myactions.h...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DQT_DLL -DQT_CORE_LIB -DNO_OBSOLETE_FUNCS -DQT_XML_LIB -DQT_GUI_LIB -DQT_NAMESPACE=QT -DQT_THREAD_SUPPORT -D__NT__ -D__IDP__ "-D\"$(INHERIT)\"" -D_CRT_SECURE_NO_WARNINGS=1 -DQT_LARGEFILE_SUPPORT -D_WINDLL -D_UNICODE -DUNICODE "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include" "-I." "-I.\GeneratedFiles"</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing myactions.h...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DQT_DLL -DQT_CORE_LIB -DNO_OBSOLETE_FUNCS -DQT_XML_LIB -DQT_GUI_LIB -DQT_NAMESPACE=QT -DQT_THREAD_SUPPORT -D__NT__ -D__IDP__ "-D\"$(INHERIT)\"" -D_CRT_SECURE_NO_WARNINGS=1 -DQT_LARGEFILE_SUPPORT -D_WINDLL -D_UNICODE -DUNICODE "-I$(IDASDK)\include" "-I$(QTDIR)\include\qtmain" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include" "-I." "-I.\GeneratedFiles"</Command>
-    </CustomBuild>
+    <ClInclude Include="myactions.h" />
     <ClInclude Include="qwindow.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="unix_core.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties Qt5Version_x0020_Win32="msvc2010_opengl" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>
